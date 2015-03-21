@@ -1,12 +1,12 @@
 <?php
 
-namespace rotvulpix\Symfony\TransbankBundle\Controller;
+namespace rotvulpix\TransbankBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use rotvulpix\Symfony\TransbankBundle\Services\ItemTransaccion;
-use rotvulpix\Symfony\TransbankBundle\Services\Transaccion;
-use rotvulpix\Symfony\TransbankBundle\Entity\WebPayLog;
+use rotvulpix\TransbankBundle\Services\ItemTransaccion;
+use rotvulpix\TransbankBundle\Services\Transaccion;
+use rotvulpix\TransbankBundle\Entity\WebPayLog;
 class WebPayController extends Controller
 {
     public function CheckoutAction($transaccion)
@@ -32,7 +32,7 @@ class WebPayController extends Controller
         $parametros['ordenCompra'] = $log->getOrdenCompra();
 
         // Render!
-        return $this->render('rotvulpixSymfonyTransbankBundle:WebPay:checkout.html.twig', $parametros);
+        return $this->render('rotvulpixTransbankBundle:WebPay:checkout.html.twig', $parametros);
     }
 
     public function ExitoAction()
@@ -48,7 +48,7 @@ class WebPayController extends Controller
                 'ordenCompra' => $_POST['TBK_ORDEN_COMPRA']
                 );
 
-            $logTransaccion = $em->getRepository('rotvulpixSymfonyTransbankBundle:WebPayLog')->findOneBy($paramLog);
+            $logTransaccion = $em->getRepository('rotvulpixTransbankBundle:WebPayLog')->findOneBy($paramLog);
             if(!$logTransaccion) { throw new \Exception("No Existe Log de Transacción - " . json_encode($paramLog)); }
 
             // Nuevo Ítem de Transacción
@@ -65,13 +65,13 @@ class WebPayController extends Controller
             $parametros['logTransaccion'] = $logTransaccion;
 
             // Render
-            return $this->render('rotvulpixSymfonyTransbankBundle:WebPay:exito.html.twig', $parametros);
+            return $this->render('rotvulpixTransbankBundle:WebPay:exito.html.twig', $parametros);
         }
     }
 
     public function FracasoAction()
     {
-        return $this->render('rotvulpixSymfonyTransbankBundle:WebPay:fracaso.html.twig');
+        return $this->render('rotvulpixTransbankBundle:WebPay:fracaso.html.twig');
     }
 
     public function CierreAction()
@@ -87,9 +87,9 @@ class WebPayController extends Controller
                 'sesion' => $_POST['TBK_ID_SESION'],
                 'monto' => $_POST['TBK_MONTO'] / 100
                 );
-            
+
             // Búsqueda de Transacción en DB
-            $logTransaccion = $em->getRepository('rotvulpixSymfonyTransbankBundle:WebPayLog')->findOneBy($param);
+            $logTransaccion = $em->getRepository('rotvulpixTransbankBundle:WebPayLog')->findOneBy($param);
             if(!$logTransaccion) { throw new \Exception("No Existe Log de Transacción - " . json_encode($param)); }
 
             // Verificar Timeout
@@ -133,9 +133,9 @@ class WebPayController extends Controller
 
             $em->persist($logTransaccion);
             $em->flush();
-            
-            
-            // Ha Pasado todos los Filtros  
+
+
+            // Ha Pasado todos los Filtros
             return new Response('ACEPTADO');
 
         } catch (\Exception $e) {

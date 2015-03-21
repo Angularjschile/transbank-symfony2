@@ -1,4 +1,4 @@
-{% extends 'rotvulpixSymfonyTransbankBundle::base.html.twig' %}
+{% extends 'rotvulpixTransbankBundle::base.html.twig' %}
 {% block body %}
-{{ render(controller('rotvulpixSymfonyTransbankBundle:WebPay:Checkout', { 'transaccion': transaccion }))}}
+{{ render(controller('rotvulpixTransbankBundle:WebPay:Checkout', { 'transaccion': transaccion }))}}
 {% endblock %}

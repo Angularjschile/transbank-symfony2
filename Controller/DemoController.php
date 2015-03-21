@@ -1,13 +1,13 @@
 <?php
 
-namespace rotvulpix\Symfony\TransbankBundle\Controller;
+namespace rotvulpix\TransbankBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use rotvulpix\Symfony\TransbankBundle\Services\ItemTransaccion;
-use rotvulpix\Symfony\TransbankBundle\Services\Transaccion;
+use rotvulpix\TransbankBundle\Services\ItemTransaccion;
+use rotvulpix\TransbankBundle\Services\Transaccion;
 class DemoController extends Controller
 {
-    public function CompraAction() 
+    public function CompraAction()
     {
         // Nuevo Ítem de Transacción
         $transaccion = new Transaccion();
@@ -22,7 +22,7 @@ class DemoController extends Controller
         $parametros['transaccion'] = $transaccion;
 
         // Render
-        return $this->render('rotvulpixSymfonyTransbankBundle:Demo:compra.html.twig', $parametros);
+        return $this->render('rotvulpixTransbankBundle:Demo:compra.html.twig', $parametros);
     }
 
     public function WebPayAction()
@@ -41,6 +41,6 @@ class DemoController extends Controller
         $parametros['transaccion'] = $transaccion;
 
         // Render
-        return $this->render('rotvulpixSymfonyTransbankBundle:Demo:webpay.html.twig', $parametros);
+        return $this->render('rotvulpixTransbankBundle:Demo:webpay.html.twig', $parametros);
     }
 }

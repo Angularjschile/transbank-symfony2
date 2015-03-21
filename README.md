@@ -39,7 +39,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new rotvulpix\Symfony\TransbankBundle\rotvulpixSymfonyTransbankBundle(),
+        new rotvulpix\TransbankBundle\rotvulpixTransbankBundle(),
     );
 }
 ```

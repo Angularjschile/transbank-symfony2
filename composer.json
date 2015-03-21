@@ -9,8 +9,8 @@
         }
     ],
     "autoload": {
-        "psr-0": { "rotvulpix\\Symfony\\TransbankBundle": "" }
+        "psr-0": { "rotvulpix\\TransbankBundle": "" }
     },
-    "target-dir": "rotvulpix/Symfony/TransbankBundle",
+    "target-dir": "rotvulpix/TransbankBundle",
     "minimum-stability": "dev"
 }

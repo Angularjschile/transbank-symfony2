@@ -1,6 +1,6 @@
 <?php
 
-namespace rotvulpix\Symfony\TransbankBundle\Services;
+namespace rotvulpix\TransbankBundle\Services;
 
 class Transaccion
 {

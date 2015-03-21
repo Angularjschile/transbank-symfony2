@@ -1,22 +1,22 @@
 rotvulpix_symfony_tbk_demo:
     path:     /Compra
-    defaults: { _controller: rotvulpixSymfonyTransbankBundle:Demo:Compra }
+    defaults: { _controller: rotvulpixTransbankBundle:Demo:Compra }
 
 rotvulpix_symfony_tbk_cierre:
     path:     /WebPay/Cierre
-    defaults: { _controller: rotvulpixSymfonyTransbankBundle:WebPay:Cierre }
+    defaults: { _controller: rotvulpixTransbankBundle:WebPay:Cierre }
     methods:  [POST]
 
 rotvulpix_symfony_tbk_exito:
     path:     /WebPay/Exito
-    defaults: { _controller: rotvulpixSymfonyTransbankBundle:WebPay:Exito }
+    defaults: { _controller: rotvulpixTransbankBundle:WebPay:Exito }
     methods:  [POST]
 
 rotvulpix_symfony_tbk_fracaso:
     path:     /WebPay/Fracaso
-    defaults: { _controller: rotvulpixSymfonyTransbankBundle:WebPay:Fracaso }
+    defaults: { _controller: rotvulpixTransbankBundle:WebPay:Fracaso }
     methods:  [POST]
 
 rotvulpix_symfony_tbk_demo_checkout:
     path:     /WebPay
-    defaults: { _controller: rotvulpixSymfonyTransbankBundle:Demo:WebPay }
+    defaults: { _controller: rotvulpixTransbankBundle:Demo:WebPay }
