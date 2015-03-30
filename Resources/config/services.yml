@@ -1,7 +1,0 @@
-parameters:
-#    rotvulpix_transbank.example.class: rotvulpix\TransbankBundle\Example
-
-services:
-#    rotvulpix_transbank.example:
-#        class: %rotvulpix_transbank.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
